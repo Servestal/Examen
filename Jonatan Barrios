@@ -1,0 +1,76 @@
+import numpy as np
+entradas=[""]*100
+precios = {"Platinum": 120000, "gold": 80000, "silver": 50000}
+
+def menu():
+  print("-----------------------")
+  print("MENU")
+  print("1.Comprar entradas")
+  print("2.Mostrar ubicaciones disponibles")
+  print("3.Ver listado de asistentes")
+  print("4.Mostrar ganancias totales")
+  print("5.Salir")
+
+def comprar_entrada():
+  print("---------------------------")
+  entradas=int(input("Cuantas entradas desea comprar se pueden comprar de 1 a 3 por cliente: "))
+  if entradas <= 0 or entradas >= 4:
+    print("solo puede comprar de 1 a 3 entradas")
+  else:
+    pantalla()
+
+def pantalla():
+  for i, estado in enumerate(entradas):
+        if estado == "":
+            print(i + 1, end="\t")
+        else:
+            print("X", end="\t")
+        if (i + 1) % 10 == 0:
+            print()
+
+def ubicacion(ubicacion):
+  print("--------------------------------")
+#Si no se ocupar arreglos o listas para almasenar datos no puedo avansar
+def listado():
+  print("---------------------------")
+#Si no he almasenado datos no puedo avansar
+def ganancia():
+  print("---------------------------")
+#si no almaseno la cantidad de entradas en algun arreglo no puedo avansar
+
+def error():
+    print("--------------------------------------------")
+    print("Las obciones deben ser de 1 a 5")
+
+def salir():
+  print("---------------------------")
+  print("Gracias por visitar a salido del sistema")
+  print("Nombre: Jpnatán")
+  print("Apellido: Barrios")
+  print("Fehca actual: 12/07/2023")
+
+
+
+
+
+sw=1
+while sw == 1:
+  menu()
+  try:
+    op=int(input("Selecciona una obcion: "))
+    if op == 1:
+      comprar_entrada()
+    if op == 2:
+      ubicacion()
+    if op == 3:
+      listado()
+    if op == 4:
+      ganancia()
+    if op == 5:
+      salir()
+      break
+    elif op >= 6:
+      error()
+
+  except:
+    print("Error")
